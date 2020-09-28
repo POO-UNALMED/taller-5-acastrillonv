@@ -3,12 +3,14 @@ package zooAnimales;
 import java.util.ArrayList;
 import java.util.List;
 
-import gestion.Zona;
-
 public class Pez extends Animal {
-	public Pez(int totalAnimales, String nombre, int edad, String habitat, String genero, List<Zona> zona) {
-		super(totalAnimales, nombre, edad, habitat, genero, zona);
-		// TODO Auto-generated constructor stub
+	
+	public Pez(String nombre, int edad, String habitat, String genero,String colorEscamas,int cantidadAletas) {
+		super();
+		
+	}
+	public Pez() {
+		
 	}
 	public List<Pez> getListado() {
 		return listado;

@@ -28,15 +28,16 @@ public class Zoologico {
 	private String ubicacion;
 	private List<Zona> zonas = new ArrayList<>();
 	
+	public Zoologico() {
+		
+	}
 	public Zoologico(String nombre, String ubicacion, List<Zona> zonas) {
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
 		this.zonas = zonas;
 	}
 	
-	public Zoologico() {
-		
-	}
+	
 	
 	public void agregarZonas() {
 

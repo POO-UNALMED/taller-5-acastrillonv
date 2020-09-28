@@ -3,13 +3,14 @@ package zooAnimales;
 import java.util.ArrayList;
 import java.util.List;
 
-import gestion.Zona;
-
 public class Mamifero extends Animal {
 
-	public Mamifero(int totalAnimales, String nombre, int edad, String habitat, String genero, List<Zona> zona) {
-		super(totalAnimales, nombre, edad, habitat, genero, zona);
-		// TODO Auto-generated constructor stub
+	public Mamifero(String nombre, int edad, String habitat, String genero,boolean pelaje,int patas) {
+		super();
+		
+	}
+	public Mamifero() {
+		
 	}
 	public int cantidadMamiferos(){
 		return listado.size();

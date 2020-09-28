@@ -2,12 +2,17 @@ package zooAnimales;
 
 import java.util.ArrayList;
 import java.util.List;
-import gestion.Zona;
 
 public class Anfibio extends Animal {
 	
-	public Anfibio(int totalAnimales, String nombre, int edad, String habitat, String genero, List<Zona> zona) {
-		super(totalAnimales, nombre, edad, habitat, genero, zona);
+	
+	
+	public Anfibio(String nombre, int edad, String habitat, String genero,String colorPiel,boolean venenoso) {
+		super();
+		
+	}
+	public Anfibio() {
+		
 	}
 	
 	public List<Anfibio> getListado() {
