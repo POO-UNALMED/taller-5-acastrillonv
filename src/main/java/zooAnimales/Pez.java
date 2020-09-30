@@ -6,11 +6,13 @@ import java.util.List;
 public class Pez extends Animal {
 	
 	public Pez(String nombre, int edad, String habitat, String genero,String colorEscamas,int cantidadAletas) {
-		super();
-		
+		super(nombre, edad,habitat,genero);
+		this.colorEscamas=colorEscamas;
+		this.cantidadAletas=cantidadAletas;
+		listado.add(this);
 	}
 	public Pez() {
-		
+		listado.add(this);
 	}
 	public List<Pez> getListado() {
 		return listado;
@@ -31,22 +33,30 @@ public class Pez extends Animal {
 		this.cantidadAletas = cantidadAletas;
 	}
 	
-	private List<Pez> listado = new ArrayList<>();
-	public int salmones;
-	public int bacalaos;
+	private static List<Pez> listado = new ArrayList<>();
+	public static int salmones;
+	public static int bacalaos;
 	private String colorEscamas;
 	private int cantidadAletas;
 
-	public int cantidadPeces() {
-		return listado.size();
+	public static int cantidadPeces() {
+		if (listado.isEmpty()) {
+			return 0;
+			}else{
+				return listado.size();
+			}
 	}
-	public void movimiento() {
-
+	public String movimiento() {
+		return "nadar";
 	}
-	public void crearSalmon() {
-
+	public static Pez crearSalmon(String nombre, int edad, String genero) {
+		Pez salmon = new Pez(nombre, edad, "oceano", genero, "rojo", 6);
+		salmones++;
+		return salmon;
 	}
-	public void crearBacalao() {
-
+	public static Pez crearBacalao(String nombre, int edad, String genero) {
+		Pez bacalao = new Pez(nombre, edad, "oceano", genero, "gris", 6);
+		bacalaos++;
+		return bacalao;
 	}
 }

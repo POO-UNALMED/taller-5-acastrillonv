@@ -6,11 +6,13 @@ import java.util.List;
 public class Reptil extends Animal {
 	
 	public Reptil(String nombre, int edad, String habitat, String genero,String colorEscamas,int largoCola) {
-		super();
-		
+		super(nombre, edad,habitat,genero);
+		this.colorEscamas=colorEscamas;
+		this.largoCola=largoCola;
+		listado.add(this);
 	}
 	public Reptil() {
-		
+		listado.add(this);
 	}
 	public List<Reptil> getListado() {
 		return listado;
@@ -31,22 +33,30 @@ public class Reptil extends Animal {
 		this.largoCola = largoCola;
 	}
 	
-	private List<Reptil> listado = new ArrayList<>();
-	public int iguanas;
-	public int serpientes;
+	private static List<Reptil> listado = new ArrayList<>();
+	public static int iguanas;
+	public static int serpientes;
 	private String colorEscamas;
 	private int largoCola;
 
-	public int cantidadReptiles() {
-		return listado.size();
+	public static int cantidadReptiles() {
+		if (listado.isEmpty()) {
+			return 0;
+			}else{
+				return listado.size();
+			}
 	}
-	public void movimiento() {
-
+	public String movimiento() {
+		return "reptar";
 	}
-	public void crearIguana() {
-
+	public static Reptil crearIguana(String nombre, int edad, String genero) {
+		Reptil iguana = new Reptil(nombre, edad, "humedal", genero, "verde", 3);
+		iguanas++;
+		return iguana;
 	}
-	public void crearSerpiente() {
-
+	public static Reptil crearSerpiente(String nombre, int edad, String genero) {
+		Reptil serpiente = new Reptil(nombre, edad, "jungla", genero, "blanco", 1);
+		serpientes++;
+		return serpiente;
 	}
 }

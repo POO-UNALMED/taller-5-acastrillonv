@@ -6,11 +6,12 @@ import java.util.List;
 public class Ave extends Animal {
 
 	public Ave(String nombre, int edad, String habitat, String genero,String colorPlumas) {
-		super();
-		
+		super(nombre, edad,habitat,genero);
+		this.colorPlumas=colorPlumas;
+		listado.add(this);
 	}
 	public Ave() {
-		
+		listado.add(this);
 	}
 	public List<Ave> getListado() {
 		return listado;
@@ -25,22 +26,30 @@ public class Ave extends Animal {
 		this.colorPlumas = colorPlumas;
 	}
 
-	private List<Ave> listado = new ArrayList<>();
-	public int halcones;
-	public int aguilas;
+	private static List<Ave> listado = new ArrayList<>();
+	public static int halcones;
+	public static int aguilas;
 	private String colorPlumas;
 
-	public int cantidadAves() {
-		return listado.size();
+	public static int cantidadAves() {
+		if (listado.isEmpty()) {
+			return 0;
+			}else{
+				return listado.size();
+			}
 	}
 
-	public void movimiento() {
-
+	public String movimiento() {
+		return"volar";
 	}
-	public void crearHalcon() {
-
+	public static Ave crearHalcon(String nombre, int edad, String genero) {
+		Ave halcon = new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
+		halcones++;
+		return halcon;
 	}
-	public void crearAguila() {
-
+	public static Ave crearAguila(String nombre, int edad, String genero) {
+		Ave aguila = new Ave(nombre, edad, "montanas", genero, "blanco y amarillo");
+		aguilas++;
+		return aguila;
 	}
 }
